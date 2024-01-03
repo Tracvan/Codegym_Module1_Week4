@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Temperature</title>
+</head>
+<body>
+<p id="cToF"></p>
+<p id="cToK"></p>
+<script>
+    function Temperature(cDegree) {
+        this.cDegree = cDegree
+        this.getCToF = function () {
+            let fDegree = (cDegree * 9 / 5) + 32
+            document.getElementById("cToF").innerHTML = "Nhiệt độ F: " + fDegree
+            return fDegree
+
+        }
+        this.getCtoK = function () {
+            let kDegree = cDegree + 273.15
+            document.getElementById("cToK").innerHTML = "Nhiệt độ K: " + kDegree
+            return kDegree;
+
+        }
+    }
+
+    function Display() {
+        let temperature1 = new Temperature(25);
+        temperature1.getCToF();
+        temperature1.getCtoK();
+    }
+    Display()
+</script>
+</body>
+</html>

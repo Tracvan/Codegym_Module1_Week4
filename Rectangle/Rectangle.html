@@ -1,10 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Rectangle</title>
 </head>
 <body>
-$END$
+<canvas id="myCanvas" width="1100" height="600" style="border: 1px solid #d3d3d3;"></canvas>
+<h1 id="Area" ></h1>
 </body>
 </html>
+<script>
+    function Rectangle(a,b,weight, height){
+        this.a = a
+        this.b = b
+        this.weight = weight
+        this.height = height
+        this.getArea =function(){
+            let area = this.weight * this.height
+            return area
+        }
+    }
+
+function getRandomHex(){
+    return Math.floor(Math.random()*255)
+}
+function getRandomColor(){
+        let red = getRandomHex();
+        let green = getRandomHex();
+        let blue = getRandomHex();
+    return "rgb(" + red + "," + blue + "," + green + ")"
+}
+    function createRectangle(){
+        let color = getRandomColor()
+        let ctx = document.getElementById("myCanvas").getContext("2d")
+        let rectangle1 = new Rectangle(10,20,300,100)
+        ctx.fillStyle = color
+        ctx.fillRect(rectangle1.a,rectangle1.b,rectangle1.weight,rectangle1.height);
+         let area = rectangle1.getArea();
+         document.getElementById("Area").innerText="Area " +  area
+    }
+
+    createRectangle()
+
+</script>
