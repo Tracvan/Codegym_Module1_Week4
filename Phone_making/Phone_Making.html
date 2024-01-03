@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Phone Making</title>
+</head>
+<body>
+<script>
+    function Mobile(name) {
+        this.name = name
+        this.batterry = 100;
+        this.typingSMSBox = [];
+        this.receivedSMSBox = [];
+        this.sentSMSBox = [];
+        this.isOnOf = false
+        this.checkOnOf = function () {
+            if (this.isOnOf) {
+                console.log(this.name + " is on ")
+                return this.isOnOf
+            }
+        }
+        this.typing = function (mess){
+            this.typingSMSBox.push(mess)
+        }
+        this.checkTypingSMS = function (mess){
+            console.log(this.typingSMSBox)
+        }
+        this.turnOn = function () {
+            if (this.isOnOf === false) {
+                this.isOnOf = true
+                console.log(this.name + " is turned on")
+            }
+        }
+        this.turnOff = function () {
+            if (this.isOnOf) {
+                this.isOnOf = false
+            }
+        }
+        this.charging = function () {
+            this.batterry = 100
+            console.log(this.name + "'s batterry is: " + this.batterry)
+        }
+        this.sendSMS = function (mess, phone) {
+            if (this.isOnOf) {
+                this.sentSMSBox.push(mess)
+                phone.receivedSMSBox.push(mess + " from " + this.name)
+                console.log(  this.name + ": " + mess)
+                this.batterry -= 1
+            } else {
+                console.log(this.name + ": Turn on your phone")
+            }
+        }
+        this.receivedSMS = function (name) {
+            if (this.isOnOf) {
+                console.log(this.name + ":" + this.receivedSMSBox[this.receivedSMSBox.length - 1])
+                this.batterry -= 1
+            } else {
+                console.log(this.name + ": Turn on your phone")
+            }
+        }
+        this.checkSentSMS = function (){
+            console.log(this.sentSMSBox)
+        }
+        this.checkReceived = function(){
+            console.log(this.receivedSMSBox)
+        }
+    }
+
+
+    let iphone = new Mobile('iphone')
+    let android = new Mobile('android')
+    iphone.checkOnOf()
+    android.checkOnOf()
+    iphone.turnOn()
+    android.turnOn()
+    iphone.sendSMS("Hello, i'm Iphone", android)
+    iphone.sendSMS("Rep me pleasse !!! ", android)
+    android.receivedSMS(android)
+    android.receivedSMS(android)
+    console.log(android.batterry)
+    console.log(iphone.batterry)
+    iphone.charging()
+    iphone.checkSentSMS()
+    android.checkReceived()
+    iphone.typing( "Hello, World !!!")
+    iphone.checkTypingSMS()
+
+
+
+</script>
+</body>
+</html>
