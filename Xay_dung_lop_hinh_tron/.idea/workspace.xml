@@ -5,11 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="571cccb3-520c-4afc-93ee-ece81e7c9ea6" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Xay_dung_lop_hinh_tron.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Circle_Class.html" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/Circle_Class.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,7 +36,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Users/ASUS/OneDrive/Code Gym/Codegym_Module1_Week4/Funny_circle",
+    "last_opened_file_path": "C:/Users/ASUS/OneDrive/Code Gym/Codegym_Module1_Week4/Xay_dung_lop_hinh_tron",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -57,7 +53,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1704244295891</updated>
-      <workItem from="1704244296954" duration="1513000" />
+      <workItem from="1704244296954" duration="878000" />
     </task>
     <servers />
   </component>
