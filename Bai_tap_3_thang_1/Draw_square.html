@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Draw Square</title>
+</head>
+<body>
+<div align="center">
+    <canvas width="500" height="500" id="canvas" style="border: 1px solid #d3d3d3"></canvas>
+
+</div>
+<button id="left" onkeydown="moveLeft"> Left</button>
+<button id="right" onkeydown="moveRight"> Right</button>
+<button id="up" onkeydown="moveUp"> Up</button>
+<button id="down" onkeydown="moveDown"> Down</button>
+</body>
+</html>
+<script>
+    let c = document.getElementById("canvas")
+    let ctx = c.getContext("2d")
+    let x = 0
+    let y = 0
+    let speed = 0
+    let speedDown = 0
+    function draw(x, y) {
+        ctx.fillRect(x, y, 50, 50)
+    }
+
+    function clear() {
+        ctx.clearRect(0, 0, 500, 500)
+    }
+
+    function star() {
+        clear()
+        x += speed
+        y += speedDown
+        draw(x, y)
+    }
+
+    star()
+    function moveUp() {
+        speed = 0
+        speedDown = -10
+        star()
+    }
+    function moveRight() {
+        speed = 10
+        speedDown =0
+        star()
+    }
+    function moveLeft() {
+        speed = -10
+        speedDown=0
+        star()
+    }
+    function moveDown() {
+        speed=0
+        speedDown = 10
+        star()
+    }
+    window.addEventListener("keydown", function (event) {
+        switch (event.keyCode) {
+            case 37:
+                moveLeft()
+                break
+            case 38:
+                moveUp()
+                break
+            case 39:
+                moveRight()
+                break
+            case 40:
+                moveDown()
+                break
+        }
+    })
+
+
+</script>
